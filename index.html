@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Jornada de Clínica Médica do RN - CLIMERN</title>
+    <meta name="description"
+        content="I Jornada de Clínica Médica do RN organizada pela CLIMERN. Congresso científico com palestras, submissão de trabalhos e integração acadêmica. 08/11/2025 na Associação Médica do RN.">
+    <meta name="keywords"
+        content="medicina, clínica médica, jornada científica, CLIMERN, Rio Grande do Norte, congresso médico">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <img src="logo.jpeg" alt="Logo CLIMERN" class="logo">
+                <h1>I JORNADA DE CLÍNICA MÉDICA DO RN</h1>
+                <h2>Organizado pela Liga Acadêmica de Clínica Médica do RN (CLIMERN)</h2>
+
+                <!-- Contador de dias -->
+                <div
+                    style="margin-top: 1.5rem; background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 10px; display: inline-block;">
+                    <strong>Faltam <span id="dias-restantes">--</span> dias para o evento!</strong>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-container">
+                <!-- Menu hambúrguer -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <!-- Menu de navegação -->
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#evento">O Evento</a></li>
+                    <li><a href="#inscricoes">Inscrições</a></li>
+                    <li><a href="#trabalhos">Trabalhos</a></li>
+                    <li><a href="#cronograma">Programação</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+
+            <!-- Sobre a CLIMERN -->
+            <section id="sobre" class="section">
+                <h2>Sobre a CLIMERN</h2>
+                <p>A Liga Acadêmica de Clínica Médica do RN (CLIMERN) foi a primeira liga da Universidade Potiguar, com
+                    mais de <strong>14 anos de história e tradição</strong> e grande engajamento entre os estudantes de
+                    Medicina.</p>
+
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>🏆 Pioneirismo</h3>
+                        <p>Primeira liga acadêmica da Universidade Potiguar</p>
+                    </div>
+                    <div class="card">
+                        <h3>📅 Experiência</h3>
+                        <p>Mais de 14 anos de tradição em ensino médico</p>
+                    </div>
+                    <div class="card">
+                        <h3>👥 Engajamento</h3>
+                        <p>Grande participação estudantil ativa</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sobre o Evento -->
+            <section id="evento" class="section">
+                <h2>Sobre o Evento</h2>
+                <p>No dia <strong>8 de novembro de 2025</strong>, realizaremos a I Jornada de Clínica Médica do RN, na
+                    <strong>Associação Médica do RN</strong>. O evento terá o formato de um congresso científico.</p>
+
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>📋 Trabalhos Científicos</h3>
+                        <p>Submissão de trabalhos científicos em formato de pôster e apresentação oral</p>
+                    </div>
+                    <div class="card">
+                        <h3>👨‍⚕️ Especialistas</h3>
+                        <p>Aulas com especialistas convidados das principais áreas da clínica médica</p>
+                    </div>
+                    <div class="card">
+                        <h3>🤝 Integração</h3>
+                        <p>Espaços de integração acadêmica e científica entre participantes</p>
+                    </div>
+                </div>
+
+                <!-- Informações do evento -->
+                <div class="cards-grid mt-2">
+                    <div class="card" style="text-align: center; background: var(--light-blue);">
+                        <h3>📅 Data</h3>
+                        <p><strong>08 de Novembro de 2025</strong></p>
+                    </div>
+                    <div class="card" style="text-align: center; background: var(--light-blue);">
+                        <h3>📍 Local</h3>
+                        <p><strong>Associação Médica do RN</strong></p>
+                    </div>
+                    <div class="card" style="text-align: center; background: var(--light-blue);">
+                        <h3>⏰ Período de Inscrição</h3>
+                        <p><strong>01/09/2025 a 06/11/2025</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Inscrições e Valores -->
+            <section id="inscricoes" class="section">
+                <h2>Inscrições e Valores</h2>
+                <p>As inscrições estão abertas de <strong>01/09/2025 a 06/11/2025</strong>. Confira os valores por lote:
+                </p>
+
+                <!-- Lote atual em destaque -->
+                <div id="lote-atual" class="mb-2"></div>
+
+                <!-- Tabela completa de preços -->
+                <div class="pricing-table">
+                    <div class="pricing-card">
+                        <h3>1º Lote - até 30/09/2025</h3>
+                        <ul class="price-list">
+                            <li>Ligantes <span class="price">R$ 50,00</span></li>
+                            <li>Alunos externos <span class="price">R$ 70,00</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3>2º Lote - até 31/10/2025</h3>
+                        <ul class="price-list">
+                            <li>Ligantes <span class="price">R$ 60,00</span></li>
+                            <li>Alunos externos <span class="price">R$ 80,00</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3>3º Lote - até 06/11/2025</h3>
+                        <ul class="price-list">
+                            <li>Ligantes <span class="price">R$ 70,00</span></li>
+                            <li>Alunos externos <span class="price">R$ 90,00</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trabalhos Científicos -->
+            <section id="trabalhos" class="section">
+                <h2>Trabalhos Científicos</h2>
+                <p>Participe submetendo seu trabalho científico! Confira o cronograma completo:</p>
+
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>📝 Submissão</h3>
+                        <p><strong>01/09/2025 a 06/10/2025</strong><br>
+                            Período para envio dos trabalhos científicos</p>
+                    </div>
+                    <div class="card">
+                        <h3>🔍 Análise</h3>
+                        <p><strong>07/10/2025 a 24/10/2025</strong><br>
+                            Avaliação dos trabalhos enviados</p>
+                    </div>
+                    <div class="card">
+                        <h3>📢 Divulgação</h3>
+                        <p><strong>25/10/2025</strong><br>
+                            Resultado dos trabalhos aprovados</p>
+                    </div>
+                    <div class="card">
+                        <h3>🖼️ Material Final</h3>
+                        <p><strong>Até 03/11/2025</strong><br>
+                            Data limite para envio de pôster/slide</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cronograma/Programação -->
+            <section id="cronograma" class="section">
+                <h2>Programação do Evento</h2>
+                <p>Confira a programação completa da I Jornada de Clínica Médica do RN:</p>
+
+                <!-- Container dos filtros melhorado -->
+                <div class="filter-container">
+                    <h3>📅 Filtrar por tipo de atividade:</h3>
+                    <div class="filter-buttons">
+                        <button class="cronograma-filtro active" data-filtro="todos">
+                            📋 Todos
+                        </button>
+                        <button class="cronograma-filtro" data-filtro="palestras">
+                            👨‍⚕️ Palestras
+                        </button>
+                        <button class="cronograma-filtro" data-filtro="apresentacoes">
+                            🎤 Apresentações
+                        </button>
+                        <button class="cronograma-filtro" data-filtro="intervalos">
+                            ☕ Intervalos
+                        </button>
+                    </div>
+                </div>
+
+                <div style="overflow-x: auto;">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Horário</th>
+                                <th>Atividade</th>
+                                <th>Palestrante</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cronograma-tbody">
+                            <!-- Preenchido dinamicamente pelo JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="text-center mt-2">
+                    <p><em>* Programação sujeita a alterações</em></p>
+                </div>
+            </section>
+
+            <!-- Contato e Redes Sociais -->
+            <section id="contato" class="section">
+                <h2>Contato e Redes Sociais</h2>
+                <p>Siga nossas redes sociais para ficar por dentro de todas as novidades:</p>
+
+                <div class="social-links">
+                    <a href="https://instagram.com/climernunp" target="_blank" class="social-link">
+                        📱 @climernunp
+                    </a>
+                    <a href="https://instagram.com/jornadacmrn" target="_blank" class="social-link">
+                        📱 @jornadacmrn
+                    </a>
+                </div>
+
+                <div class="text-center mt-2">
+                    <p><strong>Local do evento:</strong><br>
+                        Associação Médica do RN</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Liga Acadêmica de Clínica Médica do RN (CLIMERN)</p>
+            <p>I Jornada de Clínica Médica do RN - 08 de Novembro de 2025</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
