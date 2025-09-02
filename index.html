@@ -24,109 +24,77 @@
 <body>
     <!-- Header -->
     <header class="header">
+        <div class="header-bg">
+            <img src="assets/header.png" alt="I Jornada de Clínica Médica do RN – 08/11/2025 na AMRN, Natal/RN"
+                class="header-image">
+        </div>
         <div class="container">
             <div class="header-content">
                 <img src="logo.jpeg" alt="Logo CLIMERN" class="logo">
                 <h1>I JORNADA DE CLÍNICA MÉDICA DO RN</h1>
                 <h2>Organizado pela Liga Acadêmica de Clínica Médica do RN (CLIMERN)</h2>
-
-                <!-- Contador de dias -->
-                <div
-                    style="margin-top: 1.5rem; background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 10px; display: inline-block;">
-                    <strong>Faltam <span id="dias-restantes">--</span> dias para o evento!</strong>
-                </div>
             </div>
         </div>
     </header>
+
+    <!-- Menu hambúrguer móvel -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Menu lateral móvel -->
+    <ul class="nav-menu" id="nav-menu">
+        <li><a href="#inscricoes">Páginas</a></li>
+        <li><a href="sobre-o-evento.html">Sobre o Evento</a></li>
+        <li><a href="sobre-a-climern.html">Sobre a CLIMERN</a></li>
+    </ul>
 
     <!-- Navigation -->
     <nav class="nav">
         <div class="container">
             <div class="nav-container">
-                <!-- Menu hambúrguer -->
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-
-                <!-- Menu de navegação -->
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#evento">O Evento</a></li>
-                    <li><a href="#inscricoes">Inscrições</a></li>
-                    <li><a href="#trabalhos">Trabalhos</a></li>
-                    <li><a href="#cronograma">Programação</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                <!-- Menu de navegação desktop -->
+                <ul class="nav-menu-desktop">
+                    <li><a href="#inscricoes">Páginas</a></li>
+                    <li><a href="sobre-o-evento.html">Sobre o Evento</a></li>
+                    <li><a href="sobre-a-climern.html">Sobre a CLIMERN</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- Countdown Section -->
+    <section id="countdown" class="countdown-section" aria-live="polite">
+        <div class="container">
+            <div class="countdown-grid">
+                <div class="countdown-card">
+                    <span class="countdown-number" id="days">--</span>
+                    <span class="countdown-label">Dias</span>
+                </div>
+                <div class="countdown-card">
+                    <span class="countdown-number" id="hours">--</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-card">
+                    <span class="countdown-number" id="minutes">--</span>
+                    <span class="countdown-label">Minutos</span>
+                </div>
+                <div class="countdown-card">
+                    <span class="countdown-number" id="seconds">--</span>
+                    <span class="countdown-label">Segundos</span>
+                </div>
+            </div>
+            <div id="event-started" class="event-started hidden">
+                <h2>🎉 Evento Iniciado! 🎉</h2>
+            </div>
+        </div>
+    </section>
+
     <!-- Main Content -->
     <main class="main">
         <div class="container">
-
-            <!-- Sobre a CLIMERN -->
-            <section id="sobre" class="section">
-                <h2>Sobre a CLIMERN</h2>
-                <p>A Liga Acadêmica de Clínica Médica do RN (CLIMERN) foi a primeira liga da Universidade Potiguar, com
-                    mais de <strong>14 anos de história e tradição</strong> e grande engajamento entre os estudantes de
-                    Medicina.</p>
-
-                <div class="cards-grid">
-                    <div class="card">
-                        <h3>🏆 Pioneirismo</h3>
-                        <p>Primeira liga acadêmica da Universidade Potiguar</p>
-                    </div>
-                    <div class="card">
-                        <h3>📅 Experiência</h3>
-                        <p>Mais de 14 anos de tradição em ensino médico</p>
-                    </div>
-                    <div class="card">
-                        <h3>👥 Engajamento</h3>
-                        <p>Grande participação estudantil ativa</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Sobre o Evento -->
-            <section id="evento" class="section">
-                <h2>Sobre o Evento</h2>
-                <p>No dia <strong>8 de novembro de 2025</strong>, realizaremos a I Jornada de Clínica Médica do RN, na
-                    <strong>Associação Médica do RN</strong>. O evento terá o formato de um congresso científico.</p>
-
-                <div class="cards-grid">
-                    <div class="card">
-                        <h3>📋 Trabalhos Científicos</h3>
-                        <p>Submissão de trabalhos científicos em formato de pôster e apresentação oral</p>
-                    </div>
-                    <div class="card">
-                        <h3>👨‍⚕️ Especialistas</h3>
-                        <p>Aulas com especialistas convidados das principais áreas da clínica médica</p>
-                    </div>
-                    <div class="card">
-                        <h3>🤝 Integração</h3>
-                        <p>Espaços de integração acadêmica e científica entre participantes</p>
-                    </div>
-                </div>
-
-                <!-- Informações do evento -->
-                <div class="cards-grid mt-2">
-                    <div class="card" style="text-align: center; background: var(--light-blue);">
-                        <h3>📅 Data</h3>
-                        <p><strong>08 de Novembro de 2025</strong></p>
-                    </div>
-                    <div class="card" style="text-align: center; background: var(--light-blue);">
-                        <h3>📍 Local</h3>
-                        <p><strong>Associação Médica do RN</strong></p>
-                    </div>
-                    <div class="card" style="text-align: center; background: var(--light-blue);">
-                        <h3>⏰ Período de Inscrição</h3>
-                        <p><strong>01/09/2025 a 06/11/2025</strong></p>
-                    </div>
-                </div>
-            </section>
 
             <!-- Inscrições e Valores -->
             <section id="inscricoes" class="section">
@@ -168,93 +136,44 @@
             <!-- Trabalhos Científicos -->
             <section id="trabalhos" class="section">
                 <h2>Trabalhos Científicos</h2>
-                <p>Participe submetendo seu trabalho científico! Confira o cronograma completo:</p>
-
-                <div class="cards-grid">
-                    <div class="card">
-                        <h3>📝 Submissão</h3>
-                        <p><strong>01/09/2025 a 06/10/2025</strong><br>
-                            Período para envio dos trabalhos científicos</p>
-                    </div>
-                    <div class="card">
-                        <h3>🔍 Análise</h3>
-                        <p><strong>07/10/2025 a 24/10/2025</strong><br>
-                            Avaliação dos trabalhos enviados</p>
-                    </div>
-                    <div class="card">
-                        <h3>📢 Divulgação</h3>
-                        <p><strong>25/10/2025</strong><br>
-                            Resultado dos trabalhos aprovados</p>
-                    </div>
-                    <div class="card">
-                        <h3>🖼️ Material Final</h3>
-                        <p><strong>Até 03/11/2025</strong><br>
-                            Data limite para envio de pôster/slide</p>
-                    </div>
-                </div>
+                <p><strong>Edital em breve!</strong></p>
             </section>
 
             <!-- Cronograma/Programação -->
             <section id="cronograma" class="section">
                 <h2>Programação do Evento</h2>
-                <p>Confira a programação completa da I Jornada de Clínica Médica do RN:</p>
-
-                <!-- Container dos filtros melhorado -->
-                <div class="filter-container">
-                    <h3>📅 Filtrar por tipo de atividade:</h3>
-                    <div class="filter-buttons">
-                        <button class="cronograma-filtro active" data-filtro="todos">
-                            📋 Todos
-                        </button>
-                        <button class="cronograma-filtro" data-filtro="palestras">
-                            👨‍⚕️ Palestras
-                        </button>
-                        <button class="cronograma-filtro" data-filtro="apresentacoes">
-                            🎤 Apresentações
-                        </button>
-                        <button class="cronograma-filtro" data-filtro="intervalos">
-                            ☕ Intervalos
-                        </button>
-                    </div>
-                </div>
-
-                <div style="overflow-x: auto;">
-                    <table class="schedule-table">
-                        <thead>
-                            <tr>
-                                <th>Horário</th>
-                                <th>Atividade</th>
-                                <th>Palestrante</th>
-                            </tr>
-                        </thead>
-                        <tbody id="cronograma-tbody">
-                            <!-- Preenchido dinamicamente pelo JavaScript -->
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="text-center mt-2">
-                    <p><em>* Programação sujeita a alterações</em></p>
-                </div>
+                <p><strong>Em breve!</strong></p>
             </section>
 
             <!-- Contato e Redes Sociais -->
+            <!-- Contato e Redes Sociais -->
             <section id="contato" class="section">
                 <h2>Contato e Redes Sociais</h2>
-                <p>Siga nossas redes sociais para ficar por dentro de todas as novidades:</p>
+                <p>Entre em contato conosco e siga nossas redes sociais para ficar por dentro de todas as novidades:</p>
+
+                <div class="contact-info">
+                    <p><strong>📧 E-mail:</strong> climernunp@gmail.com</p>
+                </div>
 
                 <div class="social-links">
                     <a href="https://instagram.com/climernunp" target="_blank" class="social-link">
-                        📱 @climernunp
+                        📱 @climernunp (Instagram da Liga)
                     </a>
                     <a href="https://instagram.com/jornadacmrn" target="_blank" class="social-link">
-                        📱 @jornadacmrn
+                        📱 @jornadacmrn (Instagram da Jornada)
                     </a>
                 </div>
 
                 <div class="text-center mt-2">
                     <p><strong>Local do evento:</strong><br>
-                        Associação Médica do RN</p>
+                        Associação Médica do RN<br>
+                        Av. Hermes da Fonseca, 1396 - Tirol, Natal - RN, 59020-650</p>
+
+                    <div class="mt-2">
+                        <a href="https://maps.app.goo.gl/uLiT9eULUKiuSLbH7" target="_blank" class="btn">
+                            📍 Ver no Google Maps
+                        </a>
+                    </div>
                 </div>
             </section>
 

@@ -5,14 +5,68 @@ const jornadaData = {
   dataEvento: "08/11/2025",
   local: "Associação Médica do RN",
   inscricoes: {
-    inicio: "01/09/2025",
-    fim: "06/11/2025",
+    inicio: "05/09/2025",
+    fim: "07/11/2025",
   },
   redes: {
     liga: "@climernunp",
     evento: "@jornadacmrn",
   },
 };
+
+// Data alvo do evento (BRT)
+const TARGET_DATE = new Date("2025-11-08T00:00:00-03:00");
+
+// Função do countdown
+function initCountdown() {
+  const daysElement = document.getElementById("days");
+  const hoursElement = document.getElementById("hours");
+  const minutesElement = document.getElementById("minutes");
+  const secondsElement = document.getElementById("seconds");
+  const countdownGrid = document.querySelector(".countdown-grid");
+  const eventStartedElement = document.getElementById("event-started");
+
+  if (!daysElement || !hoursElement || !minutesElement || !secondsElement) {
+    return;
+  }
+
+  function updateCountdown() {
+    const now = new Date();
+    const difference = TARGET_DATE.getTime() - now.getTime();
+
+    if (difference <= 0) {
+      // Evento iniciado
+      countdownGrid.style.display = "none";
+      eventStartedElement.classList.remove("hidden");
+      document.querySelector(".countdown-title").style.display = "none";
+      return;
+    }
+
+    // Calcular tempo restante
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    // Formatar números com locale pt-BR
+    const formatter = new Intl.NumberFormat("pt-BR", {
+      minimumIntegerDigits: 2,
+    });
+
+    daysElement.textContent = formatter.format(days);
+    hoursElement.textContent = formatter.format(hours);
+    minutesElement.textContent = formatter.format(minutes);
+    secondsElement.textContent = formatter.format(seconds);
+  }
+
+  // Atualizar imediatamente
+  updateCountdown();
+
+  // Atualizar a cada segundo
+  setInterval(updateCountdown, 1000);
+}
 
 // Cronograma da jornada
 const cronograma = [
@@ -238,17 +292,17 @@ function atualizarInformacoes() {
 
   if (loteElement && loteAtual) {
     loteElement.innerHTML = `
-            <div class="pricing-card" style="border: 3px solid var(--accent-color);">
-                <h3>${loteAtual.nome} - Válido até ${loteAtual.fim}</h3>
-                <ul class="price-list">
-                    <li>Ligantes <span class="price">${loteAtual.ligantes}</span></li>
-                    <li>Alunos externos <span class="price">${loteAtual.externos}</span></li>
-                </ul>
-                <div class="mt-1">
-                    <a href="#inscricoes" class="btn">Inscrever-se Agora</a>
-                </div>
-            </div>
-        `;
+      <div class="pricing-card" style="border: 3px solid var(--accent-color);">
+        <h3>${loteAtual.nome} - Válido até ${loteAtual.fim}</h3>
+        <ul class="price-list">
+          <li>Ligantes <span class="price">${loteAtual.ligantes}</span></li>
+          <li>Alunos externos <span class="price">${loteAtual.externos}</span></li>
+        </ul>
+        <div class="mt-1">
+          <a href="https://forms.gle/ipekzB1jtLD1VRC2A" class="btn" target="_blank" rel="noopener">Inscrever-se Agora</a>
+        </div>
+      </div>
+    `;
   } else if (loteElement) {
     loteElement.innerHTML = `
             <div class="pricing-card" style="border: 3px solid #ef4444;">
@@ -337,9 +391,33 @@ function toggleMobileMenu() {
   const navMenu = document.getElementById("nav-menu");
 
   if (hamburger && navMenu) {
+    // Criar overlay se não existir
+    let overlay = document.querySelector('.mobile-overlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.className = 'mobile-overlay';
+      document.body.appendChild(overlay);
+    }
+
     hamburger.addEventListener("click", function () {
       hamburger.classList.toggle("active");
-      navMenu.classList.toggle("mobile-hidden");
+      navMenu.classList.toggle("mobile-active");
+      overlay.classList.toggle("active");
+      
+      // Prevenir scroll do body quando menu estiver aberto
+      if (navMenu.classList.contains("mobile-active")) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Fechar menu ao clicar no overlay
+    overlay.addEventListener("click", function () {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("mobile-active");
+      overlay.classList.remove("active");
+      document.body.style.overflow = '';
     });
 
     // Fechar menu ao clicar em um link (mobile)
@@ -348,7 +426,9 @@ function toggleMobileMenu() {
       link.addEventListener("click", function () {
         if (window.innerWidth <= 768) {
           hamburger.classList.remove("active");
-          navMenu.classList.add("mobile-hidden");
+          navMenu.classList.remove("mobile-active");
+          overlay.classList.remove("active");
+          document.body.style.overflow = '';
         }
       });
     });
@@ -356,10 +436,10 @@ function toggleMobileMenu() {
     // Controlar visibilidade do menu baseado no tamanho da tela
     function handleResize() {
       if (window.innerWidth > 768) {
-        navMenu.classList.remove("mobile-hidden");
+        navMenu.classList.remove("mobile-active");
         hamburger.classList.remove("active");
-      } else {
-        navMenu.classList.add("mobile-hidden");
+        overlay.classList.remove("active");
+        document.body.style.overflow = '';
       }
     }
 
@@ -367,14 +447,13 @@ function toggleMobileMenu() {
     handleResize();
     window.addEventListener("resize", handleResize);
 
-    // Fechar menu ao clicar fora dele
-    document.addEventListener("click", function (event) {
-      const isClickInsideNav =
-        navMenu.contains(event.target) || hamburger.contains(event.target);
-
-      if (!isClickInsideNav && window.innerWidth <= 768) {
+    // Fechar menu com tecla ESC
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && navMenu.classList.contains("mobile-active")) {
         hamburger.classList.remove("active");
-        navMenu.classList.add("mobile-hidden");
+        navMenu.classList.remove("mobile-active");
+        overlay.classList.remove("active");
+        document.body.style.overflow = '';
       }
     });
   }
@@ -470,12 +549,14 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("🏥 I Jornada de Clínica Médica do RN - Sistema Carregado");
 
   // Executar funções de inicialização
+  initCountdown(); // Adicionar countdown
   atualizarInformacoes();
   gerarTabelaCronograma();
   navegacaoSuave();
   animarAoScroll();
   destacarSecaoAtiva();
   toggleMobileMenu(); // Adicionar controle do menu hambúrguer
+  initInscriptionButton(); // Adicionar funcionalidade do botão de inscrição
 
   // Adicionar event listeners para os links do Instagram
   document.querySelectorAll(".social-link").forEach((link) => {
@@ -504,6 +585,307 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Função para inicializar o botão de inscrição
+function initInscriptionButton() {
+  const inscriptionBtn = document.getElementById("inscription-btn");
+
+  if (inscriptionBtn) {
+    inscriptionBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      // Verificar se as inscrições ainda estão abertas
+      const hoje = new Date();
+      const fimInscricoes = new Date("2025-11-07T23:59:59-03:00");
+
+      if (hoje > fimInscricoes) {
+        // Inscrições encerradas
+        mostrarNotificacao(
+          "As inscrições foram encerradas em 07/11/2025",
+          "error"
+        );
+        return;
+      }
+
+      // Verificar se as inscrições já começaram
+      const inicioInscricoes = new Date("2025-09-05T00:00:00-03:00");
+
+      if (hoje < inicioInscricoes) {
+        // Inscrições ainda não começaram
+        mostrarNotificacao("As inscrições começam em 05/09/2025", "warning");
+        return;
+      }
+
+      // Simular redirecionamento para Google Forms
+      // URL placeholder - deve ser substituída pela URL real do Google Forms
+      const googleFormsUrl = "https://forms.google.com/your-form-url-here";
+
+      // Mostrar loading
+      const originalText = inscriptionBtn.innerHTML;
+      inscriptionBtn.innerHTML = "<span>⏳ Redirecionando...</span>";
+      inscriptionBtn.style.pointerEvents = "none";
+
+      setTimeout(() => {
+        // Restaurar texto original
+        inscriptionBtn.innerHTML = originalText;
+        inscriptionBtn.style.pointerEvents = "auto";
+
+        // Por enquanto, mostrar modal de informações
+        mostrarModalInscricao();
+
+        // Para produção, descomentar a linha abaixo:
+        // window.open(googleFormsUrl, '_blank');
+      }, 1500);
+    });
+  }
+}
+
+// Função para mostrar modal de informações sobre inscrição
+function mostrarModalInscricao() {
+  // Criar modal
+  const modal = document.createElement("div");
+  modal.className = "inscription-modal";
+  modal.innerHTML = `
+    <div class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>🎓 Inscrições - I Jornada de Clínica Médica do RN</h3>
+          <button class="modal-close" onclick="this.closest('.inscription-modal').remove()">×</button>
+        </div>
+        <div class="modal-body">
+          <div class="inscription-info">
+            <div class="info-item">
+              <strong>📅 Período de Inscrições:</strong>
+              <p>05 de setembro a 07 de novembro de 2025</p>
+            </div>
+            <div class="info-item">
+              <strong>💰 Valores:</strong>
+              <ul>
+                <li>Médicos: R$ 150,00</li>
+                <li>Estudantes: R$ 80,00 (com comprovante)</li>
+                <li>Outros Profissionais: R$ 120,00</li>
+              </ul>
+            </div>
+            <div class="info-item">
+              <strong>💳 Pagamento:</strong>
+              <p>PIX (5% desconto), cartão de crédito (3x sem juros) ou débito</p>
+            </div>
+            <div class="info-item">
+              <strong>📞 Dúvidas:</strong>
+              <p>📧 inscricoes@climern.org.br<br>📱 (84) 99999-9999</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p><small>🔗 O formulário de inscrição será disponibilizado em breve via Google Forms</small></p>
+          <button class="modal-btn" onclick="this.closest('.inscription-modal').remove()">Entendido</button>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Adicionar estilos do modal
+  if (!document.getElementById("modal-styles")) {
+    const modalStyles = document.createElement("style");
+    modalStyles.id = "modal-styles";
+    modalStyles.textContent = `
+      .inscription-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10000;
+        animation: fadeIn 0.3s ease-out;
+      }
+      
+      .modal-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+      }
+      
+      .modal-content {
+        background: white;
+        border-radius: 20px;
+        max-width: 500px;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        animation: slideUp 0.3s ease-out;
+      }
+      
+      .modal-header {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        padding: 1.5rem 2rem;
+        border-radius: 20px 20px 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .modal-header h3 {
+        margin: 0;
+        font-size: 1.3rem;
+      }
+      
+      .modal-close {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: background 0.3s ease;
+      }
+      
+      .modal-close:hover {
+        background: rgba(255,255,255,0.2);
+      }
+      
+      .modal-body {
+        padding: 2rem;
+      }
+      
+      .info-item {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--light-gray);
+      }
+      
+      .info-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+      
+      .info-item strong {
+        color: var(--primary-color);
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      
+      .info-item ul {
+        margin: 0.5rem 0;
+        padding-left: 1.5rem;
+      }
+      
+      .info-item li {
+        margin-bottom: 0.3rem;
+      }
+      
+      .modal-footer {
+        background: var(--light-gray);
+        padding: 1.5rem 2rem;
+        border-radius: 0 0 20px 20px;
+        text-align: center;
+      }
+      
+      .modal-btn {
+        background: var(--accent-color);
+        color: white;
+        border: none;
+        padding: 0.8rem 2rem;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 1rem;
+        transition: all 0.3s ease;
+      }
+      
+      .modal-btn:hover {
+        background: #e6a503;
+        transform: translateY(-2px);
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      
+      @keyframes slideUp {
+        from { transform: translateY(30px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      
+      @media (max-width: 768px) {
+        .modal-content {
+          margin: 1rem;
+          max-width: none;
+        }
+        
+        .modal-header,
+        .modal-body,
+        .modal-footer {
+          padding: 1rem 1.5rem;
+        }
+        
+        .modal-header h3 {
+          font-size: 1.1rem;
+        }
+      }
+    `;
+    document.head.appendChild(modalStyles);
+  }
+
+  document.body.appendChild(modal);
+
+  // Fechar ao clicar no overlay
+  modal.querySelector(".modal-overlay").addEventListener("click", function (e) {
+    if (e.target === this) {
+      modal.remove();
+    }
+  });
+}
+
+// Atualizar função de notificação para suportar tipos
+function mostrarNotificacao(mensagem, tipo = "success") {
+  const cores = {
+    success: "#10b981",
+    error: "#ef4444",
+    warning: "#f59e0b",
+    info: "#3b82f6",
+  };
+
+  const notificacao = document.createElement("div");
+  notificacao.textContent = mensagem;
+  notificacao.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${cores[tipo]};
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        z-index: 1000;
+        animation: fadeInUp 0.3s ease-out;
+        max-width: 300px;
+        font-size: 0.9rem;
+        line-height: 1.4;
+    `;
+
+  document.body.appendChild(notificacao);
+
+  setTimeout(() => {
+    notificacao.style.animation = "fadeOut 0.3s ease-out forwards";
+    setTimeout(() => notificacao.remove(), 300);
+  }, 4000);
+}
 
 // Exportar funções para uso global
 window.jornadaCM = {
