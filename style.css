@@ -1314,67 +1314,101 @@ body {
 /* Membros da Diretoria */
 .directors-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
+    justify-content: center;
 }
 
 .director-card {
     background: var(--white);
     padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     border: 2px solid var(--light-blue);
     transition: all 0.3s ease;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    min-height: 280px;
 }
 
 .director-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
     border-color: var(--secondary-color);
 }
 
+/* Estilos específicos para fotos dos diretores */
 .director-photo {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     overflow: hidden;
-    margin-bottom: 1rem;
-    border: 4px solid var(--light-blue);
+    margin: 0 auto 1.5rem auto;
+    border: 5px solid #007bff;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,123,255,0.2);
     transition: all 0.3s ease;
 }
 
+#luis-foto{
+
+    object-fit: contain;
+    width: 240px;
+    height: 300px;
+    margin-top: 100px;
+    margin-left: 20px;
+
+}
 .director-card:hover .director-photo {
-    border-color: var(--secondary-color);
     transform: scale(1.05);
+    border-color: var(--secondary-color);
+    box-shadow: 0 6px 20px rgba(0,123,255,0.3);
 }
 
 .director-photo img {
     width: 100%;
     height: 100%;
+    border-radius: 50%;
     object-fit: cover;
     object-position: center;
+    display: block;
+}
+
+.director-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .director-info h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: var(--text-dark);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     text-align: center;
+    line-height: 1.4;
 }
 
 .director-role {
     color: var(--primary-color);
     font-style: italic;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .directors-link {
@@ -3114,7 +3148,7 @@ textarea:focus {
 
 /* Lazy loading support */
 img[loading="lazy"] {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.3s;
 }
 
