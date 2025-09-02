@@ -22,34 +22,43 @@
 </head>
 
 <body>
-    <!-- Header simplificado -->
-    <header class="header-simple">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-bg">
+            <img src="assets/header.png" alt="I Jornada de Clínica Médica do RN – 08/11/2025 na AMRN, Natal/RN"
+                class="header-image">
+        </div>
         <div class="container">
-            <div class="header-simple-content">
-                <img src="logo.jpeg" alt="Logo CLIMERN" class="logo-small">
-                <div class="header-text">
-                    <h1>I Jornada de Clínica Médica do RN</h1>
-                    <p>08 de Novembro de 2025 - Associação Médica do RN</p>
-                </div>
+            <div class="header-content">
+                <img src="logo.jpeg" alt="Logo CLIMERN" class="logo">
+                <h1>I JORNADA DE CLÍNICA MÉDICA DO RN</h1>
+                <h2>Organizado pela Liga Acadêmica de Clínica Médica do RN (CLIMERN)</h2>
             </div>
         </div>
     </header>
+
+    <!-- Menu hambúrguer móvel -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Menu lateral móvel -->
+    <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Página inicial</a></li>
+        <li><a href="sobre-o-evento.html">Sobre o Evento</a></li>
+        <li><a href="sobre-a-climern.html">Sobre a CLIMERN</a></li>
+    </ul>
 
     <!-- Navigation -->
     <nav class="nav">
         <div class="container">
             <div class="nav-container">
-                <!-- Menu hambúrguer -->
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-
-                <!-- Menu de navegação -->
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="index.html">Páginas</a></li>
-                    <li><a href="sobre-o-evento.html" class="active">Sobre o Evento</a></li>
+                <!-- Menu de navegação desktop -->
+                <ul class="nav-menu-desktop">
+                    <li><a href="index.html">Página inicial</a></li>
+                    <li><a href="sobre-o-evento.html">Sobre o Evento</a></li>
                     <li><a href="sobre-a-climern.html">Sobre a CLIMERN</a></li>
                 </ul>
             </div>
@@ -100,6 +109,13 @@
         <div class="container">
             <p>&copy; 2025 Liga Acadêmica de Clínica Médica do RN (CLIMERN)</p>
             <p>I Jornada de Clínica Médica do RN - 08 de Novembro de 2025</p>
+            
+            <!-- Logo do desenvolvedor -->
+            <div class="developer-logo">
+                <a href="https://www.instagram.com/natanlp.dev/" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/logo_sem_fundo.png" alt="Desenvolvido por @natanlp.dev" class="dev-logo">
+                </a>
+            </div>
         </div>
     </footer>
 

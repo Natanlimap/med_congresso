@@ -3199,6 +3199,31 @@ img[loading="lazy"].loaded {
     100% { transform: rotate(360deg); }
 }
 
+/* Logo do desenvolvedor no footer */
+.developer-logo {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dev-logo {
+    height: 80px;
+    width: auto;
+    transition: all 0.3s ease;
+    filter: brightness(0.9);
+}
+
+.dev-logo:hover {
+    transform: scale(1.1);
+    filter: brightness(1);
+}
+
+.developer-logo a {
+    display: inline-block;
+    text-decoration: none;
+}
+
 /* Melhorias de SEO - Schema markup visual indicators */
 .event-schema {
     display: none; /* Schema markup será invisível */
