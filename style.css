@@ -449,11 +449,13 @@ body {
     border: 2px solid var(--light-blue);
     border-radius: 15px;
     padding: 2rem;
-    text-align: center;
+    text-align: left;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
+
+
 
 .pricing-card::before {
     content: '';
