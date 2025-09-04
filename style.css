@@ -3224,6 +3224,208 @@ img[loading="lazy"].loaded {
     text-decoration: none;
 }
 
+/* Estilos para páginas de trabalhos científicos e programação */
+.announcement-box {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.announcement-box h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.modalities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.modality-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--accent-color);
+}
+
+.modality-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.topics-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.topics-list li {
+    background: var(--light-blue);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.timeline-box {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.timeline {
+    list-style: none;
+    padding: 0;
+}
+
+.timeline li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.timeline li:last-child {
+    border-bottom: none;
+}
+
+.event-info-box {
+    background: var(--light-blue);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.event-info-box h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.event-info-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.event-info-box li {
+    padding: 0.5rem 0;
+    color: var(--text-dark);
+}
+
+.schedule-table-container {
+    margin: 2rem 0;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-table th {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.schedule-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.schedule-table tr:last-child td {
+    border-bottom: none;
+}
+
+.schedule-table tr[data-tipo="palestra"] {
+    background: #f8f9fa;
+}
+
+.schedule-table tr[data-tipo="intervalo"] {
+    background: #fff3cd;
+}
+
+.schedule-table tr[data-tipo="apresentacao"] {
+    background: #d1ecf1;
+}
+
+.schedule-table tr[data-tipo="abertura"],
+.schedule-table tr[data-tipo="encerramento"] {
+    background: #d4edda;
+}
+
+.time {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.speaker {
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+.activity-mobile {
+    display: none;
+}
+
+.schedule-notes {
+    background: #fff3cd;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.schedule-notes h3 {
+    color: #856404;
+    margin-bottom: 1rem;
+}
+
+.schedule-notes ul {
+    color: #856404;
+}
+
+/* Responsividade para tabela de programação */
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none !important;
+    }
+    
+    .activity-mobile {
+        display: block !important;
+    }
+    
+    .main-activity {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+    
+    .speaker-mobile {
+        display: block;
+        font-style: italic;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+    }
+    
+    .schedule-table th:nth-child(3) {
+        display: none;
+    }
+}
+
 /* Melhorias de SEO - Schema markup visual indicators */
 .event-schema {
     display: none; /* Schema markup será invisível */
