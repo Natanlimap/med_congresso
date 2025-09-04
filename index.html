@@ -1,202 +1,423 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>I Jornada de Clínica Médica do RN - CLIMERN</title>
-    <meta name="description"
-        content="I Jornada de Clínica Médica do RN organizada pela CLIMERN. Congresso científico com palestras, submissão de trabalhos e integração acadêmica. 08/11/2025 na Associação Médica do RN.">
-    <meta name="keywords"
-        content="medicina, clínica médica, jornada científica, CLIMERN, Rio Grande do Norte, congresso médico">
+    <meta
+      name="description"
+      content="I Jornada de Clínica Médica do RN organizada pela CLIMERN. Congresso científico com palestras, submissão de trabalhos e integração acadêmica. 08/11/2025 na Associação Médica do RN."
+    />
+    <meta
+      name="keywords"
+      content="medicina, clínica médica, jornada científica, CLIMERN, Rio Grande do Norte, congresso médico"
+    />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="logo.jpeg">
+    <!-- Meta SEO -->
+    <meta
+      name="description"
+      content="I Jornada de Clínica Médica do RN organizada pela CLIMERN. Congresso científico com palestras, submissão de trabalhos e integração acadêmica. 08/11/2025 na Associação Médica do RN."
+    />
+    <meta
+      name="keywords"
+      content="medicina, clínica médica, jornada científica, CLIMERN, Rio Grande do Norte, congresso médico, evento médico RN, congresso saúde 2025"
+    />
+    <meta name="author" content="CLIMERN - Clínica Médica do RN" />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="I Jornada de Clínica Médica do RN - CLIMERN"
+    />
+    <meta
+      property="og:description"
+      content="Congresso científico da CLIMERN com palestras, submissão de trabalhos e integração acadêmica. Participe em 08/11/2025 na Associação Médica do RN."
+    />
+    <meta
+      property="og:image"
+      content="https://jornadaclinicamedicarn.com.br/logo.jpeg"
+    />
+    <meta
+      property="og:image:alt"
+      content="Logomarca da I Jornada de Clínica Médica do RN - CLIMERN"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://jornadaclinicamedicarn.com.br/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="CLIMERN" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="I Jornada de Clínica Médica do RN - CLIMERN"
+    />
+    <meta
+      name="twitter:description"
+      content="Participe da I Jornada de Clínica Médica do RN em 08/11/2025, com palestras, trabalhos científicos e networking."
+    />
+    <meta
+      name="twitter:image"
+      content="https://jornadaclinicamedicarn.com.br/logo.jpeg"
+    />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://jornadaclinicamedicarn.com.br/" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <meta name="theme-color" content="#0a6abf" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-</head>
+    <!-- Fonts performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-<body>
+    <!-- JSON-LD: Event -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "I Jornada de Clínica Médica do RN - CLIMERN",
+        "description": "I Jornada de Clínica Médica do RN organizada pela CLIMERN. Congresso científico com palestras, submissão de trabalhos e integração acadêmica.",
+        "startDate": "2025-11-08",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "inLanguage": "pt-BR",
+        "keywords": [
+          "medicina",
+          "clínica médica",
+          "jornada científica",
+          "CLIMERN",
+          "Rio Grande do Norte",
+          "congresso médico"
+        ],
+        "image": ["https://jornadaclinicamedicarn.com.br/logo.jpeg"],
+        "url": "https://jornadaclinicamedicarn.com.br/",
+        "isAccessibleForFree": false,
+        "location": {
+          "@type": "Place",
+          "name": "Associação Médica do RN",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "",
+            "addressLocality": "Natal",
+            "addressRegion": "RN",
+            "postalCode": "",
+            "addressCountry": "BR"
+          }
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "CLIMERN",
+          "url": "https://jornadaclinicamedicarn.com.br/",
+          "sameAs": [
+            "https://instagram.com/climernunp",
+            "https://instagram.com/jornadacmrn"
+          ]
+        },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "1º Lote - Ligantes",
+            "price": "50.00",
+            "priceCurrency": "BRL",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2025-09-01",
+            "validThrough": "2025-09-30",
+            "url": "https://jornadaclinicamedicarn.com.br/#inscricoes",
+            "eligibleCustomerType": "https://schema.org/Member",
+            "availabilityStarts": "2025-09-01",
+            "availabilityEnds": "2025-09-30",
+            "audience": { "@type": "Audience", "audienceType": "Ligantes" }
+          },
+          {
+            "@type": "Offer",
+            "name": "1º Lote - Alunos externos",
+            "price": "70.00",
+            "priceCurrency": "BRL",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2025-09-01",
+            "validThrough": "2025-09-30",
+            "url": "https://jornadaclinicamedicarn.com.br/#inscricoes",
+            "audience": {
+              "@type": "Audience",
+              "audienceType": "Alunos externos"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "2º Lote - Ligantes",
+            "price": "60.00",
+            "priceCurrency": "BRL",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2025-10-01",
+            "validThrough": "2025-10-31",
+            "url": "https://jornadaclinicamedicarn.com.br/#inscricoes",
+            "audience": { "@type": "Audience", "audienceType": "Ligantes" }
+          },
+          {
+            "@type": "Offer",
+            "name": "2º Lote - Alunos externos",
+            "price": "80.00",
+            "priceCurrency": "BRL",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2025-10-01",
+            "validThrough": "2025-10-31",
+            "url": "https://jornadaclinicamedicarn.com.br/#inscricoes",
+            "audience": {
+              "@type": "Audience",
+              "audienceType": "Alunos externos"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "3º Lote - Ligantes",
+            "price": "70.00",
+            "priceCurrency": "BRL",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2025-11-01",
+            "validThrough": "2025-11-06",
+            "url": "https://jornadaclinicamedicarn.com.br/#inscricoes",
+            "audience": { "@type": "Audience", "audienceType": "Ligantes" }
+          },
+          {
+            "@type": "Offer",
+            "name": "3º Lote - Alunos externos",
+            "price": "90.00",
+            "priceCurrency": "BRL",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2025-11-01",
+            "validThrough": "2025-11-06",
+            "url": "https://jornadaclinicamedicarn.com.br/#inscricoes",
+            "audience": {
+              "@type": "Audience",
+              "audienceType": "Alunos externos"
+            }
+          }
+        ],
+        "potentialAction": {
+          "@type": "RegisterAction",
+          "target": "https://jornadaclinicamedicarn.com.br/#inscricoes"
+        }
+      }
+    </script>
+  </head>
+
+  <body>
     <!-- Header -->
     <header class="header">
-        <div class="header-bg">
-            <img src="assets/header.png" alt="I Jornada de Clínica Médica do RN – 08/11/2025 na AMRN, Natal/RN"
-                class="header-image">
+      <div class="header-bg">
+        <img
+          src="assets/header.jpeg"
+          alt="I Jornada de Clínica Médica do RN – 08/11/2025 na AMRN, Natal/RN"
+          class="header-image"
+        />
+      </div>
+      <div class="container">
+        <div class="header-content">
+          <img src="logo.jpeg" alt="Logo CLIMERN" class="logo" />
+          <h1>I JORNADA DE CLÍNICA MÉDICA DO RN</h1>
+          <h2>
+            Organizado pela Liga Acadêmica de Clínica Médica do RN (CLIMERN)
+          </h2>
         </div>
-        <div class="container">
-            <div class="header-content">
-                <img src="logo.jpeg" alt="Logo CLIMERN" class="logo">
-                <h1>I JORNADA DE CLÍNICA MÉDICA DO RN</h1>
-                <h2>Organizado pela Liga Acadêmica de Clínica Médica do RN (CLIMERN)</h2>
-            </div>
-        </div>
+      </div>
     </header>
 
     <!-- Menu hambúrguer móvel -->
     <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
 
     <!-- Menu lateral móvel -->
     <ul class="nav-menu" id="nav-menu">
-        <li><a href="#inscricoes">Páginal inicial</a></li>
-        <li><a href="sobre-o-evento.html">Sobre o Evento</a></li>
-        <li><a href="sobre-a-climern.html">Sobre a CLIMERN</a></li>
+      <li><a href="#inscricoes">Páginal inicial</a></li>
+      <li><a href="sobre-o-evento.html">Sobre o Evento</a></li>
+      <li><a href="sobre-a-climern.html">Sobre a CLIMERN</a></li>
     </ul>
 
     <!-- Navigation -->
     <nav class="nav">
-        <div class="container">
-            <div class="nav-container">
-                <!-- Menu de navegação desktop -->
-                <ul class="nav-menu-desktop">
-                    <li><a href="#inscricoes">Página inicial</a></li>
-                    <li><a href="sobre-o-evento.html">Sobre o Evento</a></li>
-                    <li><a href="sobre-a-climern.html">Sobre a CLIMERN</a></li>
-                </ul>
-            </div>
+      <div class="container">
+        <div class="nav-container">
+          <!-- Menu de navegação desktop -->
+          <ul class="nav-menu-desktop">
+            <li><a href="#inscricoes">Página inicial</a></li>
+            <li><a href="sobre-o-evento.html">Sobre o Evento</a></li>
+            <li><a href="sobre-a-climern.html">Sobre a CLIMERN</a></li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- Countdown Section -->
     <section id="countdown" class="countdown-section" aria-live="polite">
-        <div class="container">
-            <div class="countdown-grid">
-                <div class="countdown-card">
-                    <span class="countdown-number" id="days">--</span>
-                    <span class="countdown-label">Dias</span>
-                </div>
-                <div class="countdown-card">
-                    <span class="countdown-number" id="hours">--</span>
-                    <span class="countdown-label">Horas</span>
-                </div>
-                <div class="countdown-card">
-                    <span class="countdown-number" id="minutes">--</span>
-                    <span class="countdown-label">Minutos</span>
-                </div>
-                <div class="countdown-card">
-                    <span class="countdown-number" id="seconds">--</span>
-                    <span class="countdown-label">Segundos</span>
-                </div>
-            </div>
-            <div id="event-started" class="event-started hidden">
-                <h2>🎉 Evento Iniciado! 🎉</h2>
-            </div>
+      <div class="container">
+        <div class="countdown-grid">
+          <div class="countdown-card">
+            <span class="countdown-number" id="days">--</span>
+            <span class="countdown-label">Dias</span>
+          </div>
+          <div class="countdown-card">
+            <span class="countdown-number" id="hours">--</span>
+            <span class="countdown-label">Horas</span>
+          </div>
+          <div class="countdown-card">
+            <span class="countdown-number" id="minutes">--</span>
+            <span class="countdown-label">Minutos</span>
+          </div>
+          <div class="countdown-card">
+            <span class="countdown-number" id="seconds">--</span>
+            <span class="countdown-label">Segundos</span>
+          </div>
         </div>
+        <div id="event-started" class="hidden event-started">
+          <h2>🎉 Evento Iniciado! 🎉</h2>
+        </div>
+      </div>
     </section>
 
     <!-- Main Content -->
     <main class="main">
-        <div class="container">
+      <div class="container">
+        <!-- Inscrições e Valores -->
+        <section id="inscricoes" class="section">
+          <h2>Inscrições e Valores</h2>
+          <p>
+            As inscrições estão abertas de
+            <strong>01/09/2025 a 06/11/2025</strong>. Confira os valores por
+            lote:
+          </p>
 
-            <!-- Inscrições e Valores -->
-            <section id="inscricoes" class="section">
-                <h2>Inscrições e Valores</h2>
-                <p>As inscrições estão abertas de <strong>01/09/2025 a 06/11/2025</strong>. Confira os valores por lote:
-                </p>
+          <!-- Lote atual em destaque -->
+          <div id="lote-atual" class="mb-2"></div>
 
-                <!-- Lote atual em destaque -->
-                <div id="lote-atual" class="mb-2"></div>
+          <!-- Tabela completa de preços -->
+          <div class="pricing-table">
+            <div class="pricing-card">
+              <h3>1º Lote - até 30/09/2025</h3>
+              <ul class="price-list">
+                <li>Ligantes <span class="price">R$ 50,00</span></li>
+                <li>Alunos externos <span class="price">R$ 70,00</span></li>
+              </ul>
+            </div>
 
-                <!-- Tabela completa de preços -->
-                <div class="pricing-table">
-                    <div class="pricing-card">
-                        <h3>1º Lote - até 30/09/2025</h3>
-                        <ul class="price-list">
-                            <li>Ligantes <span class="price">R$ 50,00</span></li>
-                            <li>Alunos externos <span class="price">R$ 70,00</span></li>
-                        </ul>
-                    </div>
+            <div class="pricing-card">
+              <h3>2º Lote - até 31/10/2025</h3>
+              <ul class="price-list">
+                <li>Ligantes <span class="price">R$ 60,00</span></li>
+                <li>Alunos externos <span class="price">R$ 80,00</span></li>
+              </ul>
+            </div>
 
-                    <div class="pricing-card">
-                        <h3>2º Lote - até 31/10/2025</h3>
-                        <ul class="price-list">
-                            <li>Ligantes <span class="price">R$ 60,00</span></li>
-                            <li>Alunos externos <span class="price">R$ 80,00</span></li>
-                        </ul>
-                    </div>
+            <div class="pricing-card">
+              <h3>3º Lote - até 06/11/2025</h3>
+              <ul class="price-list">
+                <li>Ligantes <span class="price">R$ 70,00</span></li>
+                <li>Alunos externos <span class="price">R$ 90,00</span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
-                    <div class="pricing-card">
-                        <h3>3º Lote - até 06/11/2025</h3>
-                        <ul class="price-list">
-                            <li>Ligantes <span class="price">R$ 70,00</span></li>
-                            <li>Alunos externos <span class="price">R$ 90,00</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+        <!-- Trabalhos Científicos -->
+        <section id="trabalhos" class="section">
+          <h2>Trabalhos Científicos</h2>
+          <p><strong>Edital em breve!</strong></p>
+        </section>
 
-            <!-- Trabalhos Científicos -->
-            <section id="trabalhos" class="section">
-                <h2>Trabalhos Científicos</h2>
-                <p><strong>Edital em breve!</strong></p>
-            </section>
+        <!-- Cronograma/Programação -->
+        <section id="cronograma" class="section">
+          <h2>Programação do Evento</h2>
+          <p><strong>Em breve!</strong></p>
+        </section>
 
-            <!-- Cronograma/Programação -->
-            <section id="cronograma" class="section">
-                <h2>Programação do Evento</h2>
-                <p><strong>Em breve!</strong></p>
-            </section>
+        <!-- Contato e Redes Sociais -->
+        <!-- Contato e Redes Sociais -->
+        <section id="contato" class="section">
+          <h2>Contato e Redes Sociais</h2>
+          <p>
+            Entre em contato conosco e siga nossas redes sociais para ficar por
+            dentro de todas as novidades:
+          </p>
 
-            <!-- Contato e Redes Sociais -->
-            <!-- Contato e Redes Sociais -->
-            <section id="contato" class="section">
-                <h2>Contato e Redes Sociais</h2>
-                <p>Entre em contato conosco e siga nossas redes sociais para ficar por dentro de todas as novidades:</p>
+          <div class="contact-info">
+            <p><strong>📧 E-mail:</strong> climernunp@gmail.com</p>
+          </div>
 
-                <div class="contact-info">
-                    <p><strong>📧 E-mail:</strong> climernunp@gmail.com</p>
-                </div>
+          <div class="social-links">
+            <a
+              href="https://instagram.com/climernunp"
+              target="_blank"
+              class="social-link"
+            >
+              📱 @climernunp (Instagram da Liga)
+            </a>
+            <a
+              href="https://instagram.com/jornadacmrn"
+              target="_blank"
+              class="social-link"
+            >
+              📱 @jornadacmrn (Instagram da Jornada)
+            </a>
+          </div>
 
-                <div class="social-links">
-                    <a href="https://instagram.com/climernunp" target="_blank" class="social-link">
-                        📱 @climernunp (Instagram da Liga)
-                    </a>
-                    <a href="https://instagram.com/jornadacmrn" target="_blank" class="social-link">
-                        📱 @jornadacmrn (Instagram da Jornada)
-                    </a>
-                </div>
+          <div class="mt-2 text-center">
+            <p>
+              <strong>Local do evento:</strong><br />
+              Associação Médica do RN<br />
+              Av. Hermes da Fonseca, 1396 - Tirol, Natal - RN, 59020-650
+            </p>
 
-                <div class="text-center mt-2">
-                    <p><strong>Local do evento:</strong><br>
-                        Associação Médica do RN<br>
-                        Av. Hermes da Fonseca, 1396 - Tirol, Natal - RN, 59020-650</p>
-
-                    <div class="mt-2">
-                        <a href="https://maps.app.goo.gl/uLiT9eULUKiuSLbH7" target="_blank" class="btn">
-                            📍 Ver no Google Maps
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-        </div>
+            <div class="mt-2">
+              <a
+                href="https://maps.app.goo.gl/uLiT9eULUKiuSLbH7"
+                target="_blank"
+                class="btn"
+              >
+                📍 Ver no Google Maps
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Liga Acadêmica de Clínica Médica do RN (CLIMERN)</p>
-            <p>I Jornada de Clínica Médica do RN - 08 de Novembro de 2025</p>
+      <div class="container">
+        <p>&copy; 2025 Liga Acadêmica de Clínica Médica do RN (CLIMERN)</p>
+        <p>I Jornada de Clínica Médica do RN - 08 de Novembro de 2025</p>
 
-            <!-- Logo do desenvolvedor -->
-            <div class="developer-logo">
-                <a href="https://www.instagram.com/natanlp.dev/" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/logo_sem_fundo.png" alt="Desenvolvido por @natanlp.dev" class="dev-logo">
-                </a>
-            </div>
+        <!-- Logo do desenvolvedor -->
+        <div class="developer-logo">
+          <a
+            href="https://www.instagram.com/natanlp.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="assets/logo_sem_fundo.jpeg"
+              alt="Desenvolvido por @natanlp.dev"
+              class="dev-logo"
+            />
+          </a>
         </div>
+      </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
