@@ -400,10 +400,10 @@ function toggleMobileMenu() {
 
   if (hamburger && navMenu) {
     // Criar overlay se não existir
-    let overlay = document.querySelector('.mobile-overlay');
+    let overlay = document.querySelector(".mobile-overlay");
     if (!overlay) {
-      overlay = document.createElement('div');
-      overlay.className = 'mobile-overlay';
+      overlay = document.createElement("div");
+      overlay.className = "mobile-overlay";
       document.body.appendChild(overlay);
     }
 
@@ -411,12 +411,12 @@ function toggleMobileMenu() {
       hamburger.classList.toggle("active");
       navMenu.classList.toggle("mobile-active");
       overlay.classList.toggle("active");
-      
+
       // Prevenir scroll do body quando menu estiver aberto
       if (navMenu.classList.contains("mobile-active")) {
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = "hidden";
       } else {
-        document.body.style.overflow = '';
+        document.body.style.overflow = "";
       }
     });
 
@@ -425,7 +425,7 @@ function toggleMobileMenu() {
       hamburger.classList.remove("active");
       navMenu.classList.remove("mobile-active");
       overlay.classList.remove("active");
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     });
 
     // Fechar menu ao clicar em um link (mobile)
@@ -436,7 +436,7 @@ function toggleMobileMenu() {
           hamburger.classList.remove("active");
           navMenu.classList.remove("mobile-active");
           overlay.classList.remove("active");
-          document.body.style.overflow = '';
+          document.body.style.overflow = "";
         }
       });
     });
@@ -447,7 +447,7 @@ function toggleMobileMenu() {
         navMenu.classList.remove("mobile-active");
         hamburger.classList.remove("active");
         overlay.classList.remove("active");
-        document.body.style.overflow = '';
+        document.body.style.overflow = "";
       }
     }
 
@@ -457,11 +457,14 @@ function toggleMobileMenu() {
 
     // Fechar menu com tecla ESC
     document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape" && navMenu.classList.contains("mobile-active")) {
+      if (
+        event.key === "Escape" &&
+        navMenu.classList.contains("mobile-active")
+      ) {
         hamburger.classList.remove("active");
         navMenu.classList.remove("mobile-active");
         overlay.classList.remove("active");
-        document.body.style.overflow = '';
+        document.body.style.overflow = "";
       }
     });
   }
