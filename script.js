@@ -166,11 +166,12 @@ const cronograma = [
 // Função para calcular o lote atual baseado na data
 function getLoteAtual() {
   const hoje = new Date();
-  const lote1 = new Date("2025-09-30");
-  const lote2 = new Date("2025-10-31");
-  const lote3 = new Date("2025-11-07");
+  // Definir as datas com horário final do dia para garantir que o dia inteiro seja incluído
+  const lote1Fim = new Date("2025-09-30T23:59:59");
+  const lote2Fim = new Date("2025-10-31T23:59:59");
+  const lote3Fim = new Date("2025-11-07T23:59:59");
 
-  if (hoje <= lote1) {
+  if (hoje <= lote1Fim) {
     return {
       nome: "1º Lote",
       fim: "30/09/2025",
@@ -179,7 +180,7 @@ function getLoteAtual() {
       residentes: "R$ 100,00",
       medicos: "R$ 150,00",
     };
-  } else if (hoje <= lote2) {
+  } else if (hoje <= lote2Fim) {
     return {
       nome: "2º Lote",
       fim: "31/10/2025",
@@ -188,7 +189,7 @@ function getLoteAtual() {
       residentes: "R$ 110,00",
       medicos: "R$ 160,00",
     };
-  } else if (hoje <= lote3) {
+  } else if (hoje <= lote3Fim) {
     return {
       nome: "3º Lote",
       fim: "07/11/2025",
