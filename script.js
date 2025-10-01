@@ -308,7 +308,7 @@ function atualizarInformacoes() {
           <li>Médico <span class="price">${loteAtual.medicos}</span></li>
         </ul>
         <div class="mt-1">
-          <a href="https://forms.gle/ipekzB1jtLD1VRC2A" class="btn" target="_blank" rel="noopener">Inscrever-se Agora</a>
+          <a href="https://forms.gle/X5ER2pCsoaWeriBv6" class="btn" target="_blank" rel="noopener">Inscrever-se Agora</a>
         </div>
       </div>
     `;
