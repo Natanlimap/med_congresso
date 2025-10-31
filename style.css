@@ -514,6 +514,109 @@ body {
     margin: 0 auto;
 }
 
+/* Trabalhos Aprovados (papers) */
+.papers {
+    font-family: 'Roboto', sans-serif;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+    overflow: hidden;
+    max-width: 900px;
+    margin: 2rem auto 0;
+}
+
+.papers-title {
+    background: #003366;
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.papers-subheader {
+    background: #1e4f94;
+    color: var(--white);
+    text-align: center;
+    padding: 0.75rem 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    border-top: 2px solid #00264d;
+    border-bottom: 2px solid #00264d;
+}
+
+.papers-rows {
+    display: flex;
+    flex-direction: column;
+}
+
+.papers-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    background: #ffffff;
+    border-bottom: 1px solid #d1d5db;
+}
+
+.papers-time,
+.papers-topic {
+    padding: 0.75rem 1rem;
+    color: #003366;
+    border-right: 1px solid #d1d5db;
+    display: flex;
+    align-items: center;
+}
+
+.papers-time {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.papers-topic {
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    line-height: 1.4;
+    font-size: 0.9rem;
+    border-right: none;
+}
+
+.papers-row:nth-child(odd) {
+    background: #f7fbff;
+}
+
+/* Responsividade - Trabalhos Aprovados */
+@media (max-width: 768px) {
+    .papers {
+        margin: 1rem;
+        border-radius: 15px;
+    }
+
+    .papers-row {
+        grid-template-columns: 120px 1fr;
+    }
+
+    .papers-time,
+    .papers-topic {
+        padding: 0.6rem 0.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .papers-row {
+        grid-template-columns: 100px 1fr;
+    }
+
+    .papers-time,
+    .papers-topic {
+        padding: 0.5rem 0.4rem;
+        font-size: 0.75rem;
+    }
+}
+
 .schedule-title {
     background: #003366;
     color: var(--white);
