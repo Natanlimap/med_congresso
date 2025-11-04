@@ -6,7 +6,7 @@ const jornadaData = {
   local: "Associação Médica do RN",
   inscricoes: {
     inicio: "05/09/2025",
-    fim: "07/11/2025",
+    fim: "06/11/2025",
   },
   redes: {
     liga: "@climernunp",
@@ -169,7 +169,7 @@ function getLoteAtual() {
   // Definir as datas com horário final do dia para garantir que o dia inteiro seja incluído
   const lote1Fim = new Date("2025-09-30T23:59:59");
   const lote2Fim = new Date("2025-10-31T23:59:59");
-  const lote3Fim = new Date("2025-11-07T23:59:59");
+  const lote3Fim = new Date("2025-11-06T23:59:59");
 
   if (hoje <= lote1Fim) {
     return {
@@ -192,7 +192,7 @@ function getLoteAtual() {
   } else if (hoje <= lote3Fim) {
     return {
       nome: "3º Lote",
-      fim: "07/11/2025",
+      fim: "06/11/2025",
       ligantes: "R$ 70,00",
       naoLigantes: "R$ 90,00",
       residentes: "R$ 120,00",
@@ -316,7 +316,7 @@ function atualizarInformacoes() {
     loteElement.innerHTML = `
             <div class="pricing-card" style="border: 3px solid #ef4444;">
                 <h3>Inscrições Encerradas</h3>
-                <p>As inscrições foram encerradas em 07/11/2025</p>
+                <p>As inscrições foram encerradas em 06/11/2025</p>
             </div>
         `;
   }
@@ -608,12 +608,12 @@ function initInscriptionButton() {
 
       // Verificar se as inscrições ainda estão abertas
       const hoje = new Date();
-      const fimInscricoes = new Date("2025-11-07T23:59:59-03:00");
+      const fimInscricoes = new Date("2025-11-06T23:59:59-03:00");
 
       if (hoje > fimInscricoes) {
         // Inscrições encerradas
         mostrarNotificacao(
-          "As inscrições foram encerradas em 07/11/2025",
+          "As inscrições foram encerradas em 06/11/2025",
           "error"
         );
         return;
